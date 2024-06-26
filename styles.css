@@ -120,8 +120,9 @@ body {
 
 .container .board .food {
     background: red;
+    border-radius: 5px;
 }
 
 .container .board .snake {
-    background: pink;
+    background: green;
 }
