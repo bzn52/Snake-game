@@ -84,8 +84,33 @@ let changeDirection = (e) => {
         moveX = 0;
         moveY = 1;
     }
+
     createGame();
 }
+
+//Change direction with arrow keys
+document.addEventListener("keydown", event => {
+
+    switch (event.key) {
+        case "ArrowLeft":
+            moveX = -1;
+            moveY = 0;
+            break;
+        case "ArrowUp":
+            moveX = 0;
+            moveY = -1;
+            break;
+        case "ArrowRight":
+            moveX = 1;
+            moveY = 0;
+            break;
+        case "ArrowDown":
+            moveX = 0;
+            moveY = 1;
+            break;
+    }
+});
+
 
 let EndGame = () => {
     clearInterval(IntervalId);
@@ -97,5 +122,5 @@ restart.addEventListener("click", () => {
 })
 
 changeFoodPosition();
-IntervalId = setInterval(createGame, 140);
+IntervalId = setInterval(createGame, 150);
 createGame()
