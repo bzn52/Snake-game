@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Orbitron", sans-serif;
+}
+
+body {
+    background: #808080;
+}
+
+.container {
+    height: 400px;
+    width: 350px;
+    background: #1a1f22;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.container .score {
+    height: 50px;
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: #24282e;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    color: lightgrey;
+    font-size: 15px;
+}
+
+.container .score .score-value {
+    color: white;
+}
+
+.container .board {
+    height: 300px;
+    width: 100%;
+    display: grid;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+.container .buttons {
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: #24292e;
+}
+
+.container .buttons button {
+    all: unset;
+    height: 50px;
+    width: 24.7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    color: lightgrey;
+    border-right: 1px solid grey;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.container .buttons button:nth-child(4) {
+    border-right: none;
+}
+
+.container .game-over {
+    background: #24282e;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    transition: all .2s;
+}
+
+.container .game-over h2 {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 35px;
+    white-space: nowrap;
+}
+
+.container .game-over p {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.container .game-over .restart {
+    all: unset;
+    height: 50px;
+    width: 50px;
+    background: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.container .board .food {
+    background: red;
+}
+
+.container .board .snake {
+    background: pink;
+}
