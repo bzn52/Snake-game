@@ -47,6 +47,10 @@ body {
     grid-template: repeat(30, 1fr) / repeat(30, 1fr);
 }
 
+.container .board:nth-child(odd) {
+    background: white;
+}
+
 .container .buttons {
     height: 50px;
     width: 100%;

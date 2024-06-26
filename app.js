@@ -12,6 +12,9 @@ let snakeBody = [];
 let IntervalId;
 let score = 0;
 
+//creating audios
+const hitSFX = new Audio("hit.mp3");
+const eatSFX = new Audio("eat.mp3");
 
 let createGame = () => {
     if (gameEnd) {
@@ -20,6 +23,7 @@ let createGame = () => {
 
     //If snake eats food
     if (snakeX === foodX && snakeY === foodY) {
+        eatSFX.play();
         changeFoodPosition();
         snakeBody.push([snakeX, snakeY]);
         score++;
@@ -39,6 +43,7 @@ let createGame = () => {
 
     //Game ends when snake collide with wall
     if (snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30) {
+        hitSFX.play();
         return gameEnd = true;
     }
 
@@ -52,6 +57,7 @@ let createGame = () => {
 
         //Checking if snake head hit snake body
         if (i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]) {
+            hitSFX.play();
             gameEnd = true;
         }
     }
@@ -112,6 +118,10 @@ document.addEventListener("keydown", event => {
 });
 
 
+//Increase speed on score increase
+
+
+
 let EndGame = () => {
     clearInterval(IntervalId);
     gameOverBox.style.left = "0%";
@@ -123,4 +133,4 @@ restart.addEventListener("click", () => {
 
 changeFoodPosition();
 IntervalId = setInterval(createGame, 150);
-createGame()
+createGame();
