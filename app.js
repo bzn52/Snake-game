@@ -97,5 +97,5 @@ restart.addEventListener("click", () => {
 })
 
 changeFoodPosition();
-IntervalId = setInterval(createGame, 125);
+IntervalId = setInterval(createGame, 140);
 createGame()
